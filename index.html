@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: garamond;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            width: 100%;
+        }
+
+        h1,
+        h2 {
+
+            display: none;
+            opacity: 0;
+            animation: fadeout 2s ease-out;
+            animation-fill-mode: forwards;
+            color: rgb(247, 62, 62);
+        }
+
+        @keyframes fadeout {
+            0% {
+                opacity: 0;
+                display: block;
+                color: rgb(238, 85, 58);
+            }
+
+            50% {
+                opacity: 0.5;
+                display: block;
+                color: rgb(238, 130, 58);
+
+            }
+
+            100% {
+                opacity: 1;
+                display: block;
+                color: rgb(255,153,51);
+
+            }
+        }
+
+        .container {
+            
+            min-height: 450px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            
+        }
+
+       
+
+        .headings{
+            height: 100px;
+        }
+
+        #btnp {
+            display: block;
+            text-decoration: none;
+            background-color: red;
+            color: white;
+            width: 90%;
+            padding: 5px;
+
+        }
+
+        #text {
+            width: 90%;
+            margin-bottom: 8px;
+        }
+        video{
+            width: 90%;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="headings">
+        <h1></h1>
+        <h2></h2>
+    </div>
+      
+            <video id="video1" loop>
+                <source  src="video.mp4" type="video/mp4" />
+            </video>
+       
+        <input type="text" id="text" placeholder="Enter Your Name">
+        <a href="#" id="btnp">Click Here</a>
+    </div>
+</body>
+
+<script>
+    let p = document.getElementById('btnp')
+    let v = document.getElementById('video1')
+    let n = document.querySelector('h1')
+    let n2 = document.querySelector('h2')
+
+    p.addEventListener('click', function (e) {
+        v.play()
+        let x = document.getElementById('text').value
+
+
+        n.innerHTML = `Jay Shree Ram`
+        n2.innerHTML = `Happy Diwali ${x}`
+
+        n.style = "display:block;"
+        n2.style = "display:block;"
+    })
+</script>
+
+</html>
